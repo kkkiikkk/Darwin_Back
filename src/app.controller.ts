@@ -7,8 +7,8 @@ export class AppController {
 
   @Get()
   async getHello() {
-    const newCategory = await this.appService.create('game')
-    const newPost = await this.appService.createPost(newCategory.name)
+    const newCategory = await this.appService.create('game');
+    const newPost = await this.appService.createPost(newCategory.name);
     return { newCategory, newPost };
   }
 }
