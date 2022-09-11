@@ -1,7 +1,4 @@
-// Core
 import { Model } from 'mongoose';
-
-// Type
 import { IGenericRepository } from '../interfaces';
 
 export class MongoGenericRepository<T> implements IGenericRepository<T> {
@@ -15,7 +12,7 @@ export class MongoGenericRepository<T> implements IGenericRepository<T> {
     return this._repository.find().exec();
   }
 
-  getOne(id: string): Promise<T> {
+  getOne(id: any): Promise<T> {
     return this._repository.findById(id).exec();
   }
 

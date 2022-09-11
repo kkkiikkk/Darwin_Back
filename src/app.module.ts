@@ -1,19 +1,10 @@
 // Core
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
 
 // Modules
-import { DbModule } from './db/db.module';
-import { CategorySchema, Category } from './db/schemas/category.schema';
-import { Post, PostSchema } from './db/schemas/post.schema';
+import { MongoModule } from './mongo/mongo.module';
 
 @Module({
-  imports: [
-    DbModule,
-    MongooseModule.forFeature([
-      { name: Category.name, schema: CategorySchema },
-      { name: Post.name, schema: PostSchema },
-    ]),
-  ],
+  imports: [MongoModule],
 })
 export class AppModule {}
