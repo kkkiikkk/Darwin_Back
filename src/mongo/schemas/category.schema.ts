@@ -1,9 +1,6 @@
 // Core
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Schema as TypeSchema } from 'mongoose';
-
-// Schema
-import { Post } from './post.schema';
+import { Document } from 'mongoose';
 
 export type CategoryDocument = Document & Category;
 
@@ -14,9 +11,6 @@ export type CategoryDocument = Document & Category;
 export class Category {
   @Prop({ unique: true, required: true })
   name: string;
-
-  @Prop({ ref: 'Post', type: TypeSchema.Types.ObjectId })
-  posts: Post[];
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Category);
