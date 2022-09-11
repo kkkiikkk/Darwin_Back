@@ -7,9 +7,6 @@ import { DbModule } from './db/db.module';
 import { CategorySchema, Category } from './db/schemas/category.schema';
 import { Post, PostSchema } from './db/schemas/post.schema';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
 @Module({
   imports: [
     DbModule,
@@ -18,7 +15,5 @@ import { AppService } from './app.service';
       { name: Post.name, schema: PostSchema },
     ]),
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
